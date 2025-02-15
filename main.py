@@ -7,10 +7,10 @@ DATE = os.getenv("DATE_RELEASE")
 
 app = FastAPI()
 
-app.get("/version")
-async def get_app() -> FastAPI:
+@app.get("/version")
+async def get_app():
     return {
         "version": VERSION,
-        "date": DATE,
+        "date": DATE
     }
 
